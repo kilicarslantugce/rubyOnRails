@@ -4,5 +4,5 @@ require_relative "config/environment"
 
 run Rails.application
 Rails.application.load_server
-config:set HEROKU_DEBUG_RAILS_RUNNER=1 
+
 
