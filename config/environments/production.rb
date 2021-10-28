@@ -56,6 +56,8 @@ Rails.application.configure do
   config.log_tags = [ :request_id ]
   
   config.log_level = :debug
+  config.logger = Logger.new(STDOUT)
+  config.logger.level = Logger::DEBUG
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
