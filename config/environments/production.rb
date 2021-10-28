@@ -55,9 +55,7 @@ Rails.application.configure do
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
   
-  config.log_level = :debug
-  config.logger = Logger.new(STDOUT)
-  config.logger.level = Logger::DEBUG
+  heroku config:set HEROKU_DEBUG_RAILS_RUNNER=1 
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
