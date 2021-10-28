@@ -1,0 +1,2007 @@
+  [1m[35m (15.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (202.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (124.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20211026202647)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20211026202647"]]
+  [1m[36mTRANSACTION (127.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-10-26 20:27:13.700815"], ["updated_at", "2021-10-26 20:27:13.700815"]]
+  [1m[36mTRANSACTION (122.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/posts" for ::1 at 2021-10-26 23:27:55 +0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 24.6ms | Allocations: 1321)
+[Webpacker] Compiling...
+Started GET "/" for ::1 at 2021-10-26 23:28:30 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 78.5ms | Allocations: 228)
+Completed 200 OK in 91ms (Views: 85.9ms | ActiveRecord: 0.0ms | Allocations: 965)
+
+
+Started GET "/posts" for ::1 at 2021-10-26 23:28:35 +0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 11.6ms | Allocations: 1714)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in C:/Users/TNK/tugceBlog/public/packs
+[Webpacker] Hash: e2a8a876c5815bee1e21
+Version: webpack 4.46.0
+Time: 14700ms
+Built at: 26.10.2021 23:28:37
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-e421b4aa3f716bebdab1.js    125 KiB  application  [emitted] [immutable]  application
+js/application-e421b4aa3f716bebdab1.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-e421b4aa3f716bebdab1.js js/application-e421b4aa3f716bebdab1.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 492 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 42771.2ms | Allocations: 42958)
+Completed 200 OK in 42952ms (Views: 42844.1ms | ActiveRecord: 0.5ms | Allocations: 47603)
+
+
+Started GET "/posts" for ::1 at 2021-10-26 23:28:39 +0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 736)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 53.1ms | Allocations: 4884)
+Completed 200 OK in 55ms (Views: 54.1ms | ActiveRecord: 0.3ms | Allocations: 5260)
+
+
+Started GET "/posts/new" for ::1 at 2021-10-26 23:28:44 +0300
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+[Webpacker] Compiled all packs in C:/Users/TNK/tugceBlog/public/packs
+[Webpacker] Hash: e2a8a876c5815bee1e21
+Version: webpack 4.46.0
+Time: 1393ms
+Built at: 26.10.2021 23:28:44
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-e421b4aa3f716bebdab1.js    125 KiB  application  [emitted] [immutable]  application
+js/application-e421b4aa3f716bebdab1.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-e421b4aa3f716bebdab1.js js/application-e421b4aa3f716bebdab1.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 492 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 9289.5ms | Allocations: 38798)
+Completed 200 OK in 9299ms (Views: 9295.2ms | ActiveRecord: 1.0ms | Allocations: 39918)
+
+
+  Rendered posts/_form.html.erb (Duration: 389.2ms | Allocations: 6867)
+  Rendered posts/new.html.erb within layouts/application (Duration: 396.0ms | Allocations: 7479)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 537.1ms | Allocations: 12169)
+Completed 200 OK in 552ms (Views: 538.9ms | ActiveRecord: 2.2ms | Allocations: 16131)
+
+
+Started POST "/posts" for ::1 at 2021-10-26 23:29:21 +0300
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"Albert Solino'ya Hos geldin Tugce!", "body"=>"Hos geldiiin"}, "commit"=>"Create Post"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:27:in `block in create'
+  [1m[36mPost Create (49.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Albert Solino'ya Hos geldin Tugce!"], ["body", "Hos geldiiin"], ["created_at", "2021-10-26 20:29:21.465419"], ["updated_at", "2021-10-26 20:29:21.465419"]]
+  ↳ app/controllers/posts_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (366.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 429ms (ActiveRecord: 415.8ms | Allocations: 2765)
+
+
+Started GET "/posts/1" for ::1 at 2021-10-26 23:29:21 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:62:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (Duration: 3.5ms | Allocations: 278)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 66.8ms | Allocations: 4355)
+Completed 200 OK in 159ms (Views: 68.4ms | ActiveRecord: 0.7ms | Allocations: 8424)
+
+
+Started GET "/posts" for ::1 at 2021-10-26 23:29:26 +0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 830)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 49.3ms | Allocations: 4964)
+Completed 200 OK in 52ms (Views: 50.4ms | ActiveRecord: 0.3ms | Allocations: 5389)
+
+
+Started GET "/posts/new" for ::1 at 2021-10-26 23:30:24 +0300
+Processing by PostsController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/posts_controller.rb:15:in `new'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 1.5ms | Allocations: 757)
+  Rendered posts/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 873)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 49.3ms | Allocations: 5016)
+Completed 200 OK in 90ms (Views: 51.3ms | ActiveRecord: 2.1ms | Allocations: 9512)
+
+
+Started POST "/posts" for ::1 at 2021-10-26 23:30:25 +0300
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"", "body"=>""}, "commit"=>"Create Post"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 3.2ms | Allocations: 1742)
+  Rendered posts/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1857)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 65.2ms | Allocations: 5930)
+Completed 422 Unprocessable Entity in 69ms (Views: 66.6ms | ActiveRecord: 0.0ms | Allocations: 7028)
+
+
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (1.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Konsoldan selam!"], ["body", "one two three"], ["created_at", "2021-10-26 20:31:46.767266"], ["updated_at", "2021-10-26 20:31:46.767266"]]
+  [1m[36mTRANSACTION (188.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateComments (20211026203232)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "post_id" integer NOT NULL, "body" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_2fd19c0db7"
+FOREIGN KEY ("post_id")
+  REFERENCES "posts" ("id")
+)[0m
+  [1m[35m (26.0ms)[0m  [1m[35mCREATE INDEX "index_comments_on_post_id" ON "comments" ("post_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20211026203232"]]
+  [1m[36mTRANSACTION (443.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ? /* loading for inspect */ LIMIT ?[0m  [["post_id", 1], ["LIMIT", 11]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mComment Create (2.0ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 1], ["body", "Bir seyler soyle"], ["created_at", "2021-10-26 20:34:54.648000"], ["updated_at", "2021-10-26 20:34:54.648000"]]
+  [1m[36mTRANSACTION (158.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ? /* loading for inspect */ LIMIT ?[0m  [["post_id", 1], ["LIMIT", 11]]
+Started GET "/" for ::1 at 2021-10-27 10:28:16 +0300
+  [1m[35m (18.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 36.4ms | Allocations: 354)
+Completed 200 OK in 157ms (Views: 92.9ms | ActiveRecord: 0.0ms | Allocations: 2774)
+
+
+Started GET "/posts" for ::1 at 2021-10-27 10:28:21 +0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 15.1ms | Allocations: 4341)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 963.5ms | Allocations: 26961)
+Completed 200 OK in 1045ms (Views: 969.7ms | ActiveRecord: 1.5ms | Allocations: 29754)
+
+
+Started GET "/posts/1" for ::1 at 2021-10-27 10:28:23 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:62:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:21
+  Rendered collection of comments/_comment.html.erb [1 times] (Duration: 42.5ms | Allocations: 240)
+  Rendered comments/_new.html.erb (Duration: 187.7ms | Allocations: 2361)
+  Rendered posts/show.html.erb within layouts/application (Duration: 778.6ms | Allocations: 11582)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 836.5ms | Allocations: 15808)
+Completed 200 OK in 857ms (Views: 835.9ms | ActiveRecord: 2.4ms | Allocations: 17371)
+
+
+Started POST "/posts/1/comments" for ::1 at 2021-10-27 10:38:07 +0300
+Processing by CommentsController#create as JS
+  Parameters: {"comment"=>{"body"=>"Formdan merhaba"}, "commit"=>"Create Comment", "post_id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/comments_controller.rb:11:in `set_post'
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:11:in `set_post'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+  [1m[36mComment Create (1.4ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 1], ["body", "Formdan merhaba"], ["created_at", "2021-10-27 07:38:07.761839"], ["updated_at", "2021-10-27 07:38:07.761839"]]
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (131.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+Redirected to http://localhost:3000/posts/1
+Completed 200 OK in 169ms (ActiveRecord: 134.0ms | Allocations: 11240)
+
+
+Started GET "/posts/1" for ::1 at 2021-10-27 10:38:07 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:62:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:21
+  Rendered collection of comments/_comment.html.erb [2 times] (Duration: 0.5ms | Allocations: 157)
+  Rendered comments/_new.html.erb (Duration: 1.0ms | Allocations: 382)
+  Rendered posts/show.html.erb within layouts/application (Duration: 7.3ms | Allocations: 1811)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 64.5ms | Allocations: 6129)
+Completed 200 OK in 70ms (Views: 65.6ms | ActiveRecord: 0.6ms | Allocations: 7308)
+
+
+Started GET "/rails/mailers/comment_mailer/submitted" for ::1 at 2021-10-27 11:18:00 +0300
+  [1m[35m (18.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comment_mailer/submitted"}
+Completed 404 Not Found in 1234ms (ActiveRecord: 0.0ms | Allocations: 14207)
+
+
+  
+AbstractController::ActionNotFound (Mailer preview 'comment_mailer/submitted' not found):
+  
+railties (6.1.4.1) lib/rails/mailers_controller.rb:64:in `find_preview'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (6.1.4.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+railties (6.1.4.1) lib/rails/mailers_controller.rb:98:in `block in set_locale'
+i18n (1.8.10) lib/i18n.rb:314:in `with_locale'
+railties (6.1.4.1) lib/rails/mailers_controller.rb:97:in `set_locale'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+actiontext (6.1.4.1) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (6.1.4.1) lib/action_text/engine.rb:59:in `block (4 levels) in <class:Engine>'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:126:in `instance_exec'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.4.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4.1) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4.1) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4.1) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.4.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/rails/mailers/comments_mailer/submitted" for ::1 at 2021-10-27 11:18:38 +0300
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+CommentsMailer#submitted: processed outbound mail in 0.4ms
+Completed 500 Internal Server Error in 111ms (ActiveRecord: 0.0ms | Allocations: 5727)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/comments_mailer.rb:8:in `submitted'
+Started GET "/rails/mailers/comments_mailer/submitted" for ::1 at 2021-10-27 11:20:54 +0300
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+CommentsMailer#submitted: processed outbound mail in 0.3ms
+Completed 500 Internal Server Error in 5ms (Allocations: 2525)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/comments_mailer.rb:8:in `submitted'
+Started GET "/rails/mailers" for ::1 at 2021-10-27 11:21:02 +0300
+Processing by Rails::MailersController#index as HTML
+  Rendering layout C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-6.1.4.1/lib/rails/templates/layouts/application.html.erb
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-6.1.4.1/lib/rails/templates/rails/mailers/index.html.erb within layouts/application
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-6.1.4.1/lib/rails/templates/rails/mailers/index.html.erb within layouts/application (Duration: 16.6ms | Allocations: 993)
+  Rendered layout C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-6.1.4.1/lib/rails/templates/layouts/application.html.erb (Duration: 62.8ms | Allocations: 1235)
+Completed 200 OK in 71ms (Views: 67.2ms | Allocations: 2371)
+
+
+Started GET "/rails/mailers/comments_mailer/submitted" for ::1 at 2021-10-27 11:21:07 +0300
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+CommentsMailer#submitted: processed outbound mail in 0.8ms
+Completed 500 Internal Server Error in 5ms (Allocations: 1298)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/comments_mailer.rb:8:in `submitted'
+Started GET "/rails/mailers/comments_mailer/submitted" for ::1 at 2021-10-27 11:23:29 +0300
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+CommentsMailer#submitted: processed outbound mail in 1.6ms
+Completed 500 Internal Server Error in 19ms (Allocations: 2579)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/comments_mailer.rb:8:in `submitted'
+Started GET "/rails/mailers/comments_mailer/submitted" for ::1 at 2021-10-27 11:24:18 +0300
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+CommentsMailer#submitted: processed outbound mail in 0.9ms
+Completed 500 Internal Server Error in 20ms (Allocations: 2581)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/comments_mailer.rb:8:in `submitted'
+Started GET "/rails/mailers/comments_mailer" for ::1 at 2021-10-27 11:25:14 +0300
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer"}
+  Rendering layout C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-6.1.4.1/lib/rails/templates/layouts/application.html.erb
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-6.1.4.1/lib/rails/templates/rails/mailers/mailer.html.erb within layouts/application
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-6.1.4.1/lib/rails/templates/rails/mailers/mailer.html.erb within layouts/application (Duration: 14.4ms | Allocations: 850)
+  Rendered layout C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-6.1.4.1/lib/rails/templates/layouts/application.html.erb (Duration: 15.4ms | Allocations: 932)
+Completed 200 OK in 24ms (Views: 20.6ms | Allocations: 1729)
+
+
+Started GET "/rails/mailers/comments_mailer/submitted" for ::1 at 2021-10-27 11:25:19 +0300
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+CommentsMailer#submitted: processed outbound mail in 0.3ms
+Completed 500 Internal Server Error in 4ms (Allocations: 2440)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/comments_mailer.rb:8:in `submitted'
+Started GET "/rails/mailers/comments_mailer/submitted" for ::1 at 2021-10-27 11:26:29 +0300
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+CommentsMailer#submitted: processed outbound mail in 0.3ms
+Completed 500 Internal Server Error in 19ms (Allocations: 2578)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/comments_mailer.rb:8:in `submitted'
+Started GET "/rails/mailers/comments_mailer/submitted" for ::1 at 2021-10-27 11:30:23 +0300
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+CommentsMailer#submitted: processed outbound mail in 0.3ms
+Completed 500 Internal Server Error in 5ms (Allocations: 2522)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/comments_mailer.rb:8:in `submitted'
+Started GET "/rails/mailers/notifier/welcome" for ::1 at 2021-10-27 11:31:00 +0300
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"notifier/welcome"}
+Completed 404 Not Found in 2ms (Allocations: 665)
+
+
+  
+AbstractController::ActionNotFound (Mailer preview 'notifier/welcome' not found):
+  
+railties (6.1.4.1) lib/rails/mailers_controller.rb:64:in `find_preview'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (6.1.4.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+railties (6.1.4.1) lib/rails/mailers_controller.rb:98:in `block in set_locale'
+i18n (1.8.10) lib/i18n.rb:314:in `with_locale'
+railties (6.1.4.1) lib/rails/mailers_controller.rb:97:in `set_locale'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+actiontext (6.1.4.1) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (6.1.4.1) lib/action_text/engine.rb:59:in `block (4 levels) in <class:Engine>'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:126:in `instance_exec'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.4.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4.1) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4.1) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4.1) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.4.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/rails/mailers/notifier/welcome" for ::1 at 2021-10-27 11:31:56 +0300
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"notifier/welcome"}
+Completed 404 Not Found in 5ms (Allocations: 747)
+
+
+  
+AbstractController::ActionNotFound (Mailer preview 'notifier/welcome' not found):
+  
+railties (6.1.4.1) lib/rails/mailers_controller.rb:64:in `find_preview'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (6.1.4.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+railties (6.1.4.1) lib/rails/mailers_controller.rb:98:in `block in set_locale'
+i18n (1.8.10) lib/i18n.rb:314:in `with_locale'
+railties (6.1.4.1) lib/rails/mailers_controller.rb:97:in `set_locale'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+actiontext (6.1.4.1) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (6.1.4.1) lib/action_text/engine.rb:59:in `block (4 levels) in <class:Engine>'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:126:in `instance_exec'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.4.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4.1) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4.1) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4.1) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.4.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/rails/mailers/notifier" for ::1 at 2021-10-27 11:32:02 +0300
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"notifier"}
+Completed 404 Not Found in 2ms (Allocations: 650)
+
+
+  
+AbstractController::ActionNotFound (Mailer preview 'notifier' not found):
+  
+railties (6.1.4.1) lib/rails/mailers_controller.rb:64:in `find_preview'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (6.1.4.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+railties (6.1.4.1) lib/rails/mailers_controller.rb:98:in `block in set_locale'
+i18n (1.8.10) lib/i18n.rb:314:in `with_locale'
+railties (6.1.4.1) lib/rails/mailers_controller.rb:97:in `set_locale'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+actiontext (6.1.4.1) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (6.1.4.1) lib/action_text/engine.rb:59:in `block (4 levels) in <class:Engine>'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:126:in `instance_exec'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.4.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4.1) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4.1) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4.1) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.4.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/rails/mailers" for ::1 at 2021-10-27 11:32:10 +0300
+Processing by Rails::MailersController#index as HTML
+  Rendering layout C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-6.1.4.1/lib/rails/templates/layouts/application.html.erb
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-6.1.4.1/lib/rails/templates/rails/mailers/index.html.erb within layouts/application
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-6.1.4.1/lib/rails/templates/rails/mailers/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 778)
+  Rendered layout C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-6.1.4.1/lib/rails/templates/layouts/application.html.erb (Duration: 1.9ms | Allocations: 860)
+Completed 200 OK in 4ms (Views: 3.0ms | Allocations: 1284)
+
+
+Started GET "/rails/mailers/comments_mailer/submitted" for ::1 at 2021-10-27 11:34:54 +0300
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+CommentsMailer#submitted: processed outbound mail in 0.7ms
+Completed 500 Internal Server Error in 110ms (Allocations: 4933)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/comments_mailer.rb:8:in `submitted'
+Started GET "/rails/mailers/comments_mailer/submitted" for ::1 at 2021-10-27 11:39:56 +0300
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+CommentsMailer#submitted: processed outbound mail in 0.3ms
+Completed 500 Internal Server Error in 2ms (Allocations: 1298)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/comments_mailer.rb:8:in `submitted'
+Started GET "/rails/mailers/comments_mailer" for ::1 at 2021-10-27 11:40:02 +0300
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer"}
+  Rendering layout C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-6.1.4.1/lib/rails/templates/layouts/application.html.erb
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-6.1.4.1/lib/rails/templates/rails/mailers/mailer.html.erb within layouts/application
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-6.1.4.1/lib/rails/templates/rails/mailers/mailer.html.erb within layouts/application (Duration: 0.4ms | Allocations: 195)
+  Rendered layout C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-6.1.4.1/lib/rails/templates/layouts/application.html.erb (Duration: 1.3ms | Allocations: 277)
+Completed 200 OK in 3ms (Views: 2.3ms | Allocations: 755)
+
+
+Started GET "/rails/mailers/comments_mailer/submitted" for ::1 at 2021-10-27 11:40:04 +0300
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+CommentsMailer#submitted: processed outbound mail in 0.3ms
+Completed 500 Internal Server Error in 2ms (Allocations: 1299)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/comments_mailer.rb:8:in `submitted'
+Started GET "/rails/mailers/comments_mailer/submitted" for ::1 at 2021-10-27 11:43:32 +0300
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"comments_mailer/submitted"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ test/mailers/previews/comments_mailer_preview.rb:6:in `submitted'
+  [1m[36mComment Load (10.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" ORDER BY "comments"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ test/mailers/previews/comments_mailer_preview.rb:6:in `submitted'
+  Rendering layout layouts/mailer.html.erb
+  Rendering comments_mailer/submitted.html.erb within layouts/mailer
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments_mailer/submitted.html.erb:1
+  Rendered comments/_comment.html.erb (Duration: 1.3ms | Allocations: 198)
+  Rendered comments_mailer/submitted.html.erb within layouts/mailer (Duration: 278.9ms | Allocations: 7626)
+  Rendered layout layouts/mailer.html.erb (Duration: 283.2ms | Allocations: 7820)
+  Rendering layout layouts/mailer.text.erb
+  Rendering comments_mailer/submitted.text.erb within layouts/mailer
+  Rendered comments_mailer/submitted.text.erb within layouts/mailer (Duration: 5.9ms | Allocations: 140)
+  Rendered layout layouts/mailer.text.erb (Duration: 7.6ms | Allocations: 313)
+CommentsMailer#submitted: processed outbound mail in 315.1ms
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-6.1.4.1/lib/rails/templates/rails/mailers/email.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-6.1.4.1/lib/rails/templates/rails/mailers/email.html.erb (Duration: 270.4ms | Allocations: 5088)
+Completed 200 OK in 736ms (Views: 275.9ms | ActiveRecord: 14.4ms | Allocations: 32298)
+
+
+Started GET "/rails/mailers/comments_mailer/submitted?part=text%2Fhtml" for ::1 at 2021-10-27 11:43:33 +0300
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"comments_mailer/submitted"}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" ORDER BY "comments"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ test/mailers/previews/comments_mailer_preview.rb:6:in `submitted'
+  Rendering layout layouts/mailer.html.erb
+  Rendering comments_mailer/submitted.html.erb within layouts/mailer
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments_mailer/submitted.html.erb:1
+  Rendered comments/_comment.html.erb (Duration: 0.4ms | Allocations: 77)
+  Rendered comments_mailer/submitted.html.erb within layouts/mailer (Duration: 7.8ms | Allocations: 1023)
+  Rendered layout layouts/mailer.html.erb (Duration: 9.0ms | Allocations: 1112)
+  Rendering layout layouts/mailer.text.erb
+  Rendering comments_mailer/submitted.text.erb within layouts/mailer
+  Rendered comments_mailer/submitted.text.erb within layouts/mailer (Duration: 0.1ms | Allocations: 37)
+  Rendered layout layouts/mailer.text.erb (Duration: 1.3ms | Allocations: 126)
+CommentsMailer#submitted: processed outbound mail in 15.7ms
+  Rendering text template
+  Rendered text template (Duration: 0.1ms | Allocations: 26)
+Completed 200 OK in 37ms (Views: 14.5ms | ActiveRecord: 0.6ms | Allocations: 12949)
+
+
+Started GET "/rails/mailers/comments_mailer/submitted?part=text%2Fplain" for ::1 at 2021-10-27 11:45:26 +0300
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/plain", "path"=>"comments_mailer/submitted"}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" ORDER BY "comments"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ test/mailers/previews/comments_mailer_preview.rb:6:in `submitted'
+  Rendering layout layouts/mailer.html.erb
+  Rendering comments_mailer/submitted.html.erb within layouts/mailer
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments_mailer/submitted.html.erb:1
+  Rendered comments/_comment.html.erb (Duration: 0.3ms | Allocations: 77)
+  Rendered comments_mailer/submitted.html.erb within layouts/mailer (Duration: 7.6ms | Allocations: 1024)
+  Rendered layout layouts/mailer.html.erb (Duration: 10.1ms | Allocations: 1113)
+  Rendering layout layouts/mailer.text.erb
+  Rendering comments_mailer/submitted.text.erb within layouts/mailer
+  Rendered comments_mailer/submitted.text.erb within layouts/mailer (Duration: 0.1ms | Allocations: 37)
+  Rendered layout layouts/mailer.text.erb (Duration: 1.2ms | Allocations: 126)
+CommentsMailer#submitted: processed outbound mail in 16.4ms
+  Rendering text template
+  Rendered text template (Duration: 0.1ms | Allocations: 26)
+Completed 200 OK in 25ms (Views: 1.2ms | ActiveRecord: 0.6ms | Allocations: 12741)
+
+
+Started GET "/posts/1" for ::1 at 2021-10-27 11:59:18 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/posts_controller.rb:62:in `set_post'
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:62:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (82.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:21
+  Rendered collection of comments/_comment.html.erb [2 times] (Duration: 1.1ms | Allocations: 268)
+  Rendered comments/_new.html.erb (Duration: 57.9ms | Allocations: 1030)
+  Rendered posts/show.html.erb within layouts/application (Duration: 390.4ms | Allocations: 7905)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 751.5ms | Allocations: 15933)
+Completed 200 OK in 778ms (Views: 674.9ms | ActiveRecord: 83.1ms | Allocations: 21804)
+
+
+Started POST "/posts/1/comments" for ::1 at 2021-10-27 11:59:35 +0300
+Processing by CommentsController#create as JS
+  Parameters: {"comment"=>{"body"=>"Tekrar selam"}, "commit"=>"Create Comment", "post_id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:12:in `set_post'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+  [1m[36mComment Create (31.2ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 1], ["body", "Tekrar selam"], ["created_at", "2021-10-27 08:59:35.190507"], ["updated_at", "2021-10-27 08:59:35.190507"]]
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (159.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 353cb867-8ac0-40b0-9bfb-6575830349fd) to Async(default) with arguments: "CommentsMailer", "submitted", "deliver_now", {:args=>[#<GlobalID:0x000000000d3504f0 @uri=#<URI::GID gid://tugce-blog/Comment/3>>]}
+Redirected to http://localhost:3000/posts/1
+Completed 200 OK in 277ms (ActiveRecord: 191.3ms | Allocations: 5536)
+
+
+Started GET "/posts/1" for ::1 at 2021-10-27 11:59:35 +0300
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [353cb867-8ac0-40b0-9bfb-6575830349fd] Performing ActionMailer::MailDeliveryJob (Job ID: 353cb867-8ac0-40b0-9bfb-6575830349fd) from Async(default) enqueued at 2021-10-27T08:59:35Z with arguments: "CommentsMailer", "submitted", "deliver_now", {:args=>[#<GlobalID:0x000000000d5169d8 @uri=#<URI::GID gid://tugce-blog/Comment/3>>]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [353cb867-8ac0-40b0-9bfb-6575830349fd]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [353cb867-8ac0-40b0-9bfb-6575830349fd]   Rendering comments_mailer/submitted.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [353cb867-8ac0-40b0-9bfb-6575830349fd]   [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [353cb867-8ac0-40b0-9bfb-6575830349fd]   ↳ app/views/comments_mailer/submitted.html.erb:1
+[ActiveJob] [ActionMailer::MailDeliveryJob] [353cb867-8ac0-40b0-9bfb-6575830349fd]   Rendered comments/_comment.html.erb (Duration: 0.3ms | Allocations: 57)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [353cb867-8ac0-40b0-9bfb-6575830349fd]   Rendered comments_mailer/submitted.html.erb within layouts/mailer (Duration: 6.4ms | Allocations: 957)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [353cb867-8ac0-40b0-9bfb-6575830349fd]   Rendered layout layouts/mailer.html.erb (Duration: 7.8ms | Allocations: 1065)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [353cb867-8ac0-40b0-9bfb-6575830349fd]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [353cb867-8ac0-40b0-9bfb-6575830349fd]   Rendering comments_mailer/submitted.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [353cb867-8ac0-40b0-9bfb-6575830349fd]   Rendered comments_mailer/submitted.text.erb within layouts/mailer (Duration: 0.1ms | Allocations: 17)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [353cb867-8ac0-40b0-9bfb-6575830349fd]   Rendered layout layouts/mailer.text.erb (Duration: 1.4ms | Allocations: 122)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [353cb867-8ac0-40b0-9bfb-6575830349fd] CommentsMailer#submitted: processed outbound mail in 25.0ms
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/posts_controller.rb:62:in `set_post'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:62:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:21
+  Rendered collection of comments/_comment.html.erb [3 times] (Duration: 1.7ms | Allocations: 200)
+  Rendered comments/_new.html.erb (Duration: 0.8ms | Allocations: 332)
+  Rendered posts/show.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1646)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 51.8ms | Allocations: 5966)
+Completed 200 OK in 70ms (Views: 52.9ms | ActiveRecord: 1.3ms | Allocations: 7583)
+
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [353cb867-8ac0-40b0-9bfb-6575830349fd] Delivered mail 617914f7b63e8_1b3c69a9308608fd@DESKTOP-0SSH3KA.mail (4313.3ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [353cb867-8ac0-40b0-9bfb-6575830349fd] Date: Wed, 27 Oct 2021 11:59:35 +0300
+From: from@example.com
+To: blog-owner@example.org
+Message-ID: <617914f7b63e8_1b3c69a9308608fd@DESKTOP-0SSH3KA.mail>
+Subject: Yeni Yorum!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_617914f7a4337_1b3c69a9308607c0";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_617914f7a4337_1b3c69a9308607c0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Yeni bir yorum var Albert Solino'ya Hos geldin Tugce!: Tekrar selam 
+
+----==_mimepart_617914f7a4337_1b3c69a9308607c0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Yeni bir yorum var Albert Solino&#39;ya Hos geldin Tugce!</h1>
+
+<p>Tekrar selam -- October 27, 2021 08:59</p>
+
+  </body>
+</html>
+
+----==_mimepart_617914f7a4337_1b3c69a9308607c0--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [353cb867-8ac0-40b0-9bfb-6575830349fd] Performed ActionMailer::MailDeliveryJob (Job ID: 353cb867-8ac0-40b0-9bfb-6575830349fd) from Async(default) in 4344.02ms
+Started GET "/posts" for ::1 at 2021-10-27 14:19:15 +0300
+  [1m[35m (13.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 36.7ms | Allocations: 4454)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in C:/Users/TNK/tugceBlog/public/packs
+[Webpacker] Hash: 511fc8fb5e49fdee2951
+Version: webpack 4.46.0
+Time: 6260ms
+Built at: 27.10.2021 14:19:36
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-602bed28d520f8e5dd5e.js    147 KiB  application  [emitted] [immutable]  application
+js/application-602bed28d520f8e5dd5e.js.map    163 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-602bed28d520f8e5dd5e.js js/application-602bed28d520f8e5dd5e.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 186 bytes {application} [built]
+[./app/javascript/channels/comments_channel.js] 416 bytes {application} [optional] [built]
+[./app/javascript/channels/consumer.js] 269 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 492 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 4 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 19631.2ms | Allocations: 14905)
+Completed 200 OK in 19957ms (Views: 19691.5ms | ActiveRecord: 1.6ms | Allocations: 19322)
+
+
+Started GET "/posts" for ::1 at 2021-10-27 14:19:36 +0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 950)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 65.7ms | Allocations: 5311)
+Completed 200 OK in 70ms (Views: 68.3ms | ActiveRecord: 0.3ms | Allocations: 5741)
+
+
+Started GET "/cable" for ::1 at 2021-10-27 14:19:36 +0300
+Started GET "/cable/" [WebSocket] for ::1 at 2021-10-27 14:19:39 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+CommentsChannel is transmitting the subscription confirmation
+Started GET "/posts/2" for ::1 at 2021-10-27 14:19:51 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (9.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:62:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:21
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 12)
+  Rendered comments/_new.html.erb (Duration: 90.3ms | Allocations: 4513)
+  Rendered posts/show.html.erb within layouts/application (Duration: 260.5ms | Allocations: 9751)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 325.0ms | Allocations: 13987)
+Completed 200 OK in 410ms (Views: 324.9ms | ActiveRecord: 10.7ms | Allocations: 18055)
+
+
+Started GET "/posts/2" for ::1 at 2021-10-27 14:20:45 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:62:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:21
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 10)
+  Rendered comments/_new.html.erb (Duration: 0.8ms | Allocations: 329)
+  Rendered posts/show.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1351)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 78.2ms | Allocations: 5680)
+Completed 200 OK in 91ms (Views: 80.6ms | ActiveRecord: 0.6ms | Allocations: 6675)
+
+
+Started GET "/cable" for ::1 at 2021-10-27 14:20:46 +0300
+Started GET "/cable/" [WebSocket] for ::1 at 2021-10-27 14:20:46 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+CommentsChannel is transmitting the subscription confirmation
+Started POST "/posts/2/comments" for ::1 at 2021-10-27 14:21:10 +0300
+Processing by CommentsController#create as JS
+  Parameters: {"comment"=>{"body"=>"merhaba"}, "commit"=>"Create Comment", "post_id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:12:in `set_post'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+  [1m[36mComment Create (9.6ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 2], ["body", "merhaba"], ["created_at", "2021-10-27 11:21:10.319649"], ["updated_at", "2021-10-27 11:21:10.319649"]]
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (154.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 833c0f77-a7f8-4298-b098-ffec33daec18) to Async(default) with arguments: "CommentsMailer", "submitted", "deliver_now", {:args=>[#<GlobalID:0x00000000099bc158 @uri=#<URI::GID gid://tugce-blog/Comment/4>>]}
+Redirected to http://localhost:3000/posts/2
+Completed 200 OK in 506ms (ActiveRecord: 164.6ms | Allocations: 12646)
+
+
+Started GET "/posts/2" for ::1 at 2021-10-27 14:21:10 +0300
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [833c0f77-a7f8-4298-b098-ffec33daec18] Performing ActionMailer::MailDeliveryJob (Job ID: 833c0f77-a7f8-4298-b098-ffec33daec18) from Async(default) enqueued at 2021-10-27T11:21:10Z with arguments: "CommentsMailer", "submitted", "deliver_now", {:args=>[#<GlobalID:0x0000000009cb2b50 @uri=#<URI::GID gid://tugce-blog/Comment/4>>]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [833c0f77-a7f8-4298-b098-ffec33daec18]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [833c0f77-a7f8-4298-b098-ffec33daec18]   Rendering comments_mailer/submitted.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [833c0f77-a7f8-4298-b098-ffec33daec18]   [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [833c0f77-a7f8-4298-b098-ffec33daec18]   ↳ app/views/comments_mailer/submitted.html.erb:1
+[ActiveJob] [ActionMailer::MailDeliveryJob] [833c0f77-a7f8-4298-b098-ffec33daec18]   Rendered comments/_comment.html.erb (Duration: 15.2ms | Allocations: 174)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [833c0f77-a7f8-4298-b098-ffec33daec18]   Rendered comments_mailer/submitted.html.erb within layouts/mailer (Duration: 40.0ms | Allocations: 1431)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [833c0f77-a7f8-4298-b098-ffec33daec18]   Rendered layout layouts/mailer.html.erb (Duration: 43.3ms | Allocations: 1647)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [833c0f77-a7f8-4298-b098-ffec33daec18]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [833c0f77-a7f8-4298-b098-ffec33daec18]   Rendering comments_mailer/submitted.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [833c0f77-a7f8-4298-b098-ffec33daec18]   Rendered comments_mailer/submitted.text.erb within layouts/mailer (Duration: 0.9ms | Allocations: 122)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [833c0f77-a7f8-4298-b098-ffec33daec18]   Rendered layout layouts/mailer.text.erb (Duration: 3.0ms | Allocations: 317)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [833c0f77-a7f8-4298-b098-ffec33daec18] CommentsMailer#submitted: processed outbound mail in 72.2ms
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/posts_controller.rb:62:in `set_post'
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:62:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (10.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:21
+  Rendered collection of comments/_comment.html.erb [1 times] (Duration: 1.0ms | Allocations: 222)
+  Rendered comments/_new.html.erb (Duration: 1.0ms | Allocations: 336)
+  Rendered posts/show.html.erb within layouts/application (Duration: 19.5ms | Allocations: 1787)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 66.5ms | Allocations: 6120)
+Completed 200 OK in 98ms (Views: 58.2ms | ActiveRecord: 11.6ms | Allocations: 7737)
+
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [833c0f77-a7f8-4298-b098-ffec33daec18] Delivered mail 6179362712ce5_567c4cdee58121f@DESKTOP-0SSH3KA.mail (4225.9ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [833c0f77-a7f8-4298-b098-ffec33daec18] Date: Wed, 27 Oct 2021 14:21:11 +0300
+From: from@example.com
+To: blog-owner@example.org
+Message-ID: <6179362712ce5_567c4cdee58121f@DESKTOP-0SSH3KA.mail>
+Subject: Yeni Yorum!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_61793627a250_567c4cdee5812020";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_61793627a250_567c4cdee5812020
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Yeni bir yorum var Konsoldan selam!: merhaba 
+
+----==_mimepart_61793627a250_567c4cdee5812020
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Yeni bir yorum var Konsoldan selam!</h1>
+
+<p>merhaba -- October 27, 2021 11:21</p>
+
+  </body>
+</html>
+
+----==_mimepart_61793627a250_567c4cdee5812020--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [833c0f77-a7f8-4298-b098-ffec33daec18] Performed ActionMailer::MailDeliveryJob (Job ID: 833c0f77-a7f8-4298-b098-ffec33daec18) from Async(default) in 4301.35ms
+Started GET "/posts/2" for ::1 at 2021-10-27 14:25:33 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/posts_controller.rb:62:in `set_post'
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:62:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:21
+  Rendered collection of comments/_comment.html.erb [1 times] (Duration: 0.4ms | Allocations: 114)
+  Rendered comments/_new.html.erb (Duration: 5.5ms | Allocations: 430)
+  Rendered posts/show.html.erb within layouts/application (Duration: 26.8ms | Allocations: 5922)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 87.5ms | Allocations: 10162)
+Completed 200 OK in 113ms (Views: 88.0ms | ActiveRecord: 8.5ms | Allocations: 15863)
+
+
+Started GET "/cable" for ::1 at 2021-10-27 14:25:34 +0300
+Started GET "/cable/" [WebSocket] for ::1 at 2021-10-27 14:25:34 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"CommentsChannel\"}"}) [NoMethodError - undefined method `localhost' for #<Class:0x000000000a6e1900>]: C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activerecord-6.1.4.1/lib/active_record/dynamic_matchers.rb:22:in `method_missing' | C:/Users/TNK/tugceBlog/app/channels/comments_channel.rb:8:in `subscribed' | C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actioncable-6.1.4.1/lib/action_cable/channel/base.rb:181:in `block in subscribe_to_channel' | C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activesupport-6.1.4.1/lib/active_support/callbacks.rb:117:in `block in run_callbacks' | C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activesupport-6.1.4.1/lib/active_support/execution_wrapper.rb:84:in `wrap'
+Started GET "/posts/2" for ::1 at 2021-10-27 14:25:36 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:62:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:21
+  Rendered collection of comments/_comment.html.erb [1 times] (Duration: 0.8ms | Allocations: 111)
+  Rendered comments/_new.html.erb (Duration: 0.8ms | Allocations: 329)
+  Rendered posts/show.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1502)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 62.3ms | Allocations: 5832)
+Completed 200 OK in 70ms (Views: 63.2ms | ActiveRecord: 0.7ms | Allocations: 6809)
+
+
+Started GET "/cable" for ::1 at 2021-10-27 14:25:36 +0300
+Started GET "/cable/" [WebSocket] for ::1 at 2021-10-27 14:25:36 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Could not execute command from ({"command"=>"subscribe", "identifier"=>"{\"channel\":\"CommentsChannel\"}"}) [NoMethodError - undefined method `localhost' for #<Class:0x000000000a6e1900>]: C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activerecord-6.1.4.1/lib/active_record/dynamic_matchers.rb:22:in `method_missing' | C:/Users/TNK/tugceBlog/app/channels/comments_channel.rb:8:in `subscribed' | C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actioncable-6.1.4.1/lib/action_cable/channel/base.rb:181:in `block in subscribe_to_channel' | C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activesupport-6.1.4.1/lib/active_support/callbacks.rb:117:in `block in run_callbacks' | C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activesupport-6.1.4.1/lib/active_support/execution_wrapper.rb:84:in `wrap'
+Started POST "/posts/2/comments" for ::1 at 2021-10-27 14:25:40 +0300
+Processing by CommentsController#create as JS
+  Parameters: {"comment"=>{"body"=>"merhaba"}, "commit"=>"Create Comment", "post_id"=>"2"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:13:in `set_post'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+  [1m[36mComment Create (1.1ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 2], ["body", "merhaba"], ["created_at", "2021-10-27 11:25:40.203533"], ["updated_at", "2021-10-27 11:25:40.203533"]]
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (101.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 6d11b72b-8448-4d75-bc44-0608692096db) to Async(default) with arguments: "CommentsMailer", "submitted", "deliver_now", {:args=>[#<GlobalID:0x000000000d0d7340 @uri=#<URI::GID gid://tugce-blog/Comment/5>>]}
+  Rendered comments/_comment.html.erb (Duration: 0.8ms | Allocations: 159)
+[ActionCable] Broadcasting to comments:Z2lkOi8vdHVnY2UtYmxvZy9Qb3N0LzI: {:comment=>"<p>merhaba -- October 27, 2021 11:25</p>\n"}
+Redirected to http://localhost:3000/posts/2
+Completed 200 OK in 240ms (ActiveRecord: 102.6ms | Allocations: 7177)
+
+
+Started GET "/posts/2" for ::1 at 2021-10-27 14:25:40 +0300
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [6d11b72b-8448-4d75-bc44-0608692096db] Performing ActionMailer::MailDeliveryJob (Job ID: 6d11b72b-8448-4d75-bc44-0608692096db) from Async(default) enqueued at 2021-10-27T11:25:40Z with arguments: "CommentsMailer", "submitted", "deliver_now", {:args=>[#<GlobalID:0x000000000d341108 @uri=#<URI::GID gid://tugce-blog/Comment/5>>]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [6d11b72b-8448-4d75-bc44-0608692096db]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [6d11b72b-8448-4d75-bc44-0608692096db]   Rendering comments_mailer/submitted.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [6d11b72b-8448-4d75-bc44-0608692096db]   [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [6d11b72b-8448-4d75-bc44-0608692096db]   ↳ app/views/comments_mailer/submitted.html.erb:1
+[ActiveJob] [ActionMailer::MailDeliveryJob] [6d11b72b-8448-4d75-bc44-0608692096db]   Rendered comments/_comment.html.erb (Duration: 0.2ms | Allocations: 57)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [6d11b72b-8448-4d75-bc44-0608692096db]   Rendered comments_mailer/submitted.html.erb within layouts/mailer (Duration: 4.4ms | Allocations: 955)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [6d11b72b-8448-4d75-bc44-0608692096db]   Rendered layout layouts/mailer.html.erb (Duration: 5.4ms | Allocations: 1061)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [6d11b72b-8448-4d75-bc44-0608692096db]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [6d11b72b-8448-4d75-bc44-0608692096db]   Rendering comments_mailer/submitted.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [6d11b72b-8448-4d75-bc44-0608692096db]   Rendered comments_mailer/submitted.text.erb within layouts/mailer (Duration: 0.1ms | Allocations: 17)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [6d11b72b-8448-4d75-bc44-0608692096db]   Rendered layout layouts/mailer.text.erb (Duration: 1.5ms | Allocations: 126)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [6d11b72b-8448-4d75-bc44-0608692096db] CommentsMailer#submitted: processed outbound mail in 22.4ms
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/posts_controller.rb:62:in `set_post'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:62:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:21
+  Rendered collection of comments/_comment.html.erb [2 times] (Duration: 1.1ms | Allocations: 155)
+  Rendered comments/_new.html.erb (Duration: 0.8ms | Allocations: 332)
+  Rendered posts/show.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1586)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 63.5ms | Allocations: 5916)
+Completed 200 OK in 80ms (Views: 65.9ms | ActiveRecord: 1.3ms | Allocations: 7532)
+
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [6d11b72b-8448-4d75-bc44-0608692096db] Delivered mail 617937348d544_567c4cdee58123a@DESKTOP-0SSH3KA.mail (4064.0ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [6d11b72b-8448-4d75-bc44-0608692096db] Date: Wed, 27 Oct 2021 14:25:40 +0300
+From: from@example.com
+To: blog-owner@example.org
+Message-ID: <617937348d544_567c4cdee58123a@DESKTOP-0SSH3KA.mail>
+Subject: Yeni Yorum!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_617937348b7ab_567c4cdee5812260";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_617937348b7ab_567c4cdee5812260
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Yeni bir yorum var Konsoldan selam!: merhaba 
+
+----==_mimepart_617937348b7ab_567c4cdee5812260
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Yeni bir yorum var Konsoldan selam!</h1>
+
+<p>merhaba -- October 27, 2021 11:25</p>
+
+  </body>
+</html>
+
+----==_mimepart_617937348b7ab_567c4cdee5812260--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [6d11b72b-8448-4d75-bc44-0608692096db] Performed ActionMailer::MailDeliveryJob (Job ID: 6d11b72b-8448-4d75-bc44-0608692096db) from Async(default) in 4091.38ms
+Started GET "/posts/2" for ::1 at 2021-10-27 14:31:49 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/posts_controller.rb:62:in `set_post'
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:62:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:21
+  Rendered collection of comments/_comment.html.erb [2 times] (Duration: 0.6ms | Allocations: 157)
+  Rendered comments/_new.html.erb (Duration: 1.2ms | Allocations: 430)
+  Rendered posts/show.html.erb within layouts/application (Duration: 15.3ms | Allocations: 5603)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 57.4ms | Allocations: 9841)
+Completed 200 OK in 77ms (Views: 58.7ms | ActiveRecord: 1.3ms | Allocations: 15097)
+
+
+Started GET "/cable" for ::1 at 2021-10-27 14:31:49 +0300
+Started GET "/cable/" [WebSocket] for ::1 at 2021-10-27 14:31:49 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/channels/comments_channel.rb:8:in `subscribed'
+CommentsChannel is transmitting the subscription confirmation
+CommentsChannel is streaming from comments:Z2lkOi8vdHVnY2UtYmxvZy9Qb3N0LzI
+Started GET "/cable" for ::1 at 2021-10-27 14:31:51 +0300
+Started GET "/cable/" [WebSocket] for ::1 at 2021-10-27 14:31:51 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/channels/comments_channel.rb:8:in `subscribed'
+CommentsChannel is transmitting the subscription confirmation
+CommentsChannel is streaming from comments:Z2lkOi8vdHVnY2UtYmxvZy9Qb3N0LzI
+Started POST "/posts/2/comments" for ::1 at 2021-10-27 14:32:00 +0300
+Processing by CommentsController#create as JS
+  Parameters: {"comment"=>{"body"=>"bu kez olduu"}, "commit"=>"Create Comment", "post_id"=>"2"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:13:in `set_post'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+  [1m[36mComment Create (1.7ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 2], ["body", "bu kez olduu"], ["created_at", "2021-10-27 11:32:00.593207"], ["updated_at", "2021-10-27 11:32:00.593207"]]
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (132.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: e5feb59f-0cde-44ff-a5af-fac3348cf23f) to Async(default) with arguments: "CommentsMailer", "submitted", "deliver_now", {:args=>[#<GlobalID:0x000000000d1df530 @uri=#<URI::GID gid://tugce-blog/Comment/6>>]}
+  Rendered comments/_comment.html.erb (Duration: 0.3ms | Allocations: 48)
+[ActionCable] Broadcasting to comments:Z2lkOi8vdHVnY2UtYmxvZy9Qb3N0LzI: {:comment=>"<p>bu kez olduu -- October 27, 2021 11:32</p>\n"}
+Redirected to http://localhost:3000/posts/2
+Completed 200 OK in 160ms (ActiveRecord: 134.2ms | Allocations: 5631)
+
+
+CommentsChannel transmitting {"comment"=>"<p>bu kez olduu -- October 27, 2021 11:32</p>\n"} (via streamed from comments:Z2lkOi8vdHVnY2UtYmxvZy9Qb3N0LzI)
+CommentsChannel transmitting {"comment"=>"<p>bu kez olduu -- October 27, 2021 11:32</p>\n"} (via streamed from comments:Z2lkOi8vdHVnY2UtYmxvZy9Qb3N0LzI)
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e5feb59f-0cde-44ff-a5af-fac3348cf23f] Performing ActionMailer::MailDeliveryJob (Job ID: e5feb59f-0cde-44ff-a5af-fac3348cf23f) from Async(default) enqueued at 2021-10-27T11:32:00Z with arguments: "CommentsMailer", "submitted", "deliver_now", {:args=>[#<GlobalID:0x000000000d369b30 @uri=#<URI::GID gid://tugce-blog/Comment/6>>]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e5feb59f-0cde-44ff-a5af-fac3348cf23f]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e5feb59f-0cde-44ff-a5af-fac3348cf23f]   Rendering comments_mailer/submitted.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e5feb59f-0cde-44ff-a5af-fac3348cf23f]   [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e5feb59f-0cde-44ff-a5af-fac3348cf23f]   ↳ app/views/comments_mailer/submitted.html.erb:1
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e5feb59f-0cde-44ff-a5af-fac3348cf23f]   Rendered comments/_comment.html.erb (Duration: 0.2ms | Allocations: 57)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e5feb59f-0cde-44ff-a5af-fac3348cf23f]   Rendered comments_mailer/submitted.html.erb within layouts/mailer (Duration: 4.9ms | Allocations: 958)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e5feb59f-0cde-44ff-a5af-fac3348cf23f]   Rendered layout layouts/mailer.html.erb (Duration: 6.2ms | Allocations: 1067)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e5feb59f-0cde-44ff-a5af-fac3348cf23f]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e5feb59f-0cde-44ff-a5af-fac3348cf23f]   Rendering comments_mailer/submitted.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e5feb59f-0cde-44ff-a5af-fac3348cf23f]   Rendered comments_mailer/submitted.text.erb within layouts/mailer (Duration: 0.1ms | Allocations: 17)
+Started GET "/posts/2" for ::1 at 2021-10-27 14:32:00 +0300
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e5feb59f-0cde-44ff-a5af-fac3348cf23f]   Rendered layout layouts/mailer.text.erb (Duration: 2.9ms | Allocations: 256)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e5feb59f-0cde-44ff-a5af-fac3348cf23f] CommentsMailer#submitted: processed outbound mail in 21.6ms
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/posts_controller.rb:62:in `set_post'
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:62:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:21
+  Rendered collection of comments/_comment.html.erb [3 times] (Duration: 0.8ms | Allocations: 199)
+  Rendered comments/_new.html.erb (Duration: 1.9ms | Allocations: 329)
+  Rendered posts/show.html.erb within layouts/application (Duration: 12.2ms | Allocations: 1664)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 63.3ms | Allocations: 6018)
+Completed 200 OK in 90ms (Views: 64.4ms | ActiveRecord: 2.8ms | Allocations: 7634)
+
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e5feb59f-0cde-44ff-a5af-fac3348cf23f] Delivered mail 617938b0dd933_567c4cdee58125ed@DESKTOP-0SSH3KA.mail (4066.4ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e5feb59f-0cde-44ff-a5af-fac3348cf23f] Date: Wed, 27 Oct 2021 14:32:00 +0300
+From: from@example.com
+To: blog-owner@example.org
+Message-ID: <617938b0dd933_567c4cdee58125ed@DESKTOP-0SSH3KA.mail>
+Subject: Yeni Yorum!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_617938b0dc1f8_567c4cdee58124f";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_617938b0dc1f8_567c4cdee58124f
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Yeni bir yorum var Konsoldan selam!: bu kez olduu 
+
+----==_mimepart_617938b0dc1f8_567c4cdee58124f
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Yeni bir yorum var Konsoldan selam!</h1>
+
+<p>bu kez olduu -- October 27, 2021 11:32</p>
+
+  </body>
+</html>
+
+----==_mimepart_617938b0dc1f8_567c4cdee58124f--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e5feb59f-0cde-44ff-a5af-fac3348cf23f] Performed ActionMailer::MailDeliveryJob (Job ID: e5feb59f-0cde-44ff-a5af-fac3348cf23f) from Async(default) in 4092.01ms
+Started GET "/posts/2" for ::1 at 2021-10-27 14:36:30 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/posts_controller.rb:62:in `set_post'
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:62:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:21
+  Rendered collection of comments/_comment.html.erb [3 times] (Duration: 0.6ms | Allocations: 201)
+  Rendered comments/_new.html.erb (Duration: 1.4ms | Allocations: 430)
+  Rendered posts/show.html.erb within layouts/application (Duration: 20.5ms | Allocations: 6036)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 65.4ms | Allocations: 10274)
+Completed 200 OK in 94ms (Views: 65.5ms | ActiveRecord: 4.7ms | Allocations: 15955)
+
+
+Started GET "/cable" for ::1 at 2021-10-27 14:36:30 +0300
+Started GET "/cable/" [WebSocket] for ::1 at 2021-10-27 14:36:31 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/channels/comments_channel.rb:8:in `subscribed'
+CommentsChannel is transmitting the subscription confirmation
+CommentsChannel is streaming from comments:Z2lkOi8vdHVnY2UtYmxvZy9Qb3N0LzI
+Started GET "/cable" for ::1 at 2021-10-27 14:36:33 +0300
+Started GET "/cable/" [WebSocket] for ::1 at 2021-10-27 14:36:33 +0300
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/channels/comments_channel.rb:8:in `subscribed'
+CommentsChannel is transmitting the subscription confirmation
+CommentsChannel is streaming from comments:Z2lkOi8vdHVnY2UtYmxvZy9Qb3N0LzI
+Started POST "/posts/2/comments" for ::1 at 2021-10-27 14:36:39 +0300
+Processing by CommentsController#create as JS
+  Parameters: {"comment"=>{"body"=>"son deneme"}, "commit"=>"Create Comment", "post_id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:13:in `set_post'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+  [1m[36mComment Create (1.2ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 2], ["body", "son deneme"], ["created_at", "2021-10-27 11:36:39.192472"], ["updated_at", "2021-10-27 11:36:39.192472"]]
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (114.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: e879b94f-9e6e-42a4-bedf-6e00140a36e8) to Async(default) with arguments: "CommentsMailer", "submitted", "deliver_now", {:args=>[#<GlobalID:0x000000000d274950 @uri=#<URI::GID gid://tugce-blog/Comment/7>>]}
+  Rendered comments/_comment.html.erb (Duration: 0.3ms | Allocations: 48)
+[ActionCable] Broadcasting to comments:Z2lkOi8vdHVnY2UtYmxvZy9Qb3N0LzI: {:comment=>"<p>son deneme -- October 27, 2021 11:36</p>\n"}
+Redirected to http://localhost:3000/posts/2
+Completed 200 OK in 153ms (ActiveRecord: 115.8ms | Allocations: 5608)
+
+
+CommentsChannel transmitting {"comment"=>"<p>son deneme -- October 27, 2021 11:36</p>\n"} (via streamed from comments:Z2lkOi8vdHVnY2UtYmxvZy9Qb3N0LzI)
+CommentsChannel transmitting {"comment"=>"<p>son deneme -- October 27, 2021 11:36</p>\n"} (via streamed from comments:Z2lkOi8vdHVnY2UtYmxvZy9Qb3N0LzI)
+Started GET "/posts/2" for ::1 at 2021-10-27 14:36:39 +0300
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e879b94f-9e6e-42a4-bedf-6e00140a36e8] Performing ActionMailer::MailDeliveryJob (Job ID: e879b94f-9e6e-42a4-bedf-6e00140a36e8) from Async(default) enqueued at 2021-10-27T11:36:39Z with arguments: "CommentsMailer", "submitted", "deliver_now", {:args=>[#<GlobalID:0x000000000d3c1e48 @uri=#<URI::GID gid://tugce-blog/Comment/7>>]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e879b94f-9e6e-42a4-bedf-6e00140a36e8]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e879b94f-9e6e-42a4-bedf-6e00140a36e8]   Rendering comments_mailer/submitted.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e879b94f-9e6e-42a4-bedf-6e00140a36e8]   [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e879b94f-9e6e-42a4-bedf-6e00140a36e8]   ↳ app/views/comments_mailer/submitted.html.erb:1
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e879b94f-9e6e-42a4-bedf-6e00140a36e8]   Rendered comments/_comment.html.erb (Duration: 0.4ms | Allocations: 57)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e879b94f-9e6e-42a4-bedf-6e00140a36e8]   Rendered comments_mailer/submitted.html.erb within layouts/mailer (Duration: 12.8ms | Allocations: 960)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e879b94f-9e6e-42a4-bedf-6e00140a36e8]   Rendered layout layouts/mailer.html.erb (Duration: 15.1ms | Allocations: 1066)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e879b94f-9e6e-42a4-bedf-6e00140a36e8]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e879b94f-9e6e-42a4-bedf-6e00140a36e8]   Rendering comments_mailer/submitted.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e879b94f-9e6e-42a4-bedf-6e00140a36e8]   Rendered comments_mailer/submitted.text.erb within layouts/mailer (Duration: 0.1ms | Allocations: 17)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e879b94f-9e6e-42a4-bedf-6e00140a36e8]   Rendered layout layouts/mailer.text.erb (Duration: 3.0ms | Allocations: 122)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e879b94f-9e6e-42a4-bedf-6e00140a36e8] CommentsMailer#submitted: processed outbound mail in 37.1ms
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/posts_controller.rb:62:in `set_post'
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:62:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:21
+  Rendered collection of comments/_comment.html.erb [4 times] (Duration: 2.4ms | Allocations: 243)
+  Rendered comments/_new.html.erb (Duration: 1.6ms | Allocations: 329)
+  Rendered posts/show.html.erb within layouts/application (Duration: 20.3ms | Allocations: 1693)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 96.4ms | Allocations: 6020)
+Completed 200 OK in 131ms (Views: 98.2ms | ActiveRecord: 2.3ms | Allocations: 7635)
+
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e879b94f-9e6e-42a4-bedf-6e00140a36e8] Delivered mail 617939c79f523_567c4cdee5812772@DESKTOP-0SSH3KA.mail (4083.2ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e879b94f-9e6e-42a4-bedf-6e00140a36e8] Date: Wed, 27 Oct 2021 14:36:39 +0300
+From: from@example.com
+To: blog-owner@example.org
+Message-ID: <617939c79f523_567c4cdee5812772@DESKTOP-0SSH3KA.mail>
+Subject: Yeni Yorum!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_617939c79e041_567c4cdee58126f";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_617939c79e041_567c4cdee58126f
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Yeni bir yorum var Konsoldan selam!: son deneme 
+
+----==_mimepart_617939c79e041_567c4cdee58126f
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Yeni bir yorum var Konsoldan selam!</h1>
+
+<p>son deneme -- October 27, 2021 11:36</p>
+
+  </body>
+</html>
+
+----==_mimepart_617939c79e041_567c4cdee58126f--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [e879b94f-9e6e-42a4-bedf-6e00140a36e8] Performed ActionMailer::MailDeliveryJob (Job ID: e879b94f-9e6e-42a4-bedf-6e00140a36e8) from Async(default) in 4123.75ms
+Started GET "/posts" for ::1 at 2021-10-27 14:36:46 +0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 947)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 60.8ms | Allocations: 5275)
+Completed 200 OK in 63ms (Views: 61.6ms | ActiveRecord: 0.3ms | Allocations: 5699)
+
+
+Started GET "/posts" for ::1 at 2021-10-27 14:36:54 +0300
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 928)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 49.7ms | Allocations: 5255)
+Completed 200 OK in 54ms (Views: 52.1ms | ActiveRecord: 0.4ms | Allocations: 5679)
+
+
+Started GET "/posts/1" for ::1 at 2021-10-27 14:36:56 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:62:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:21
+  Rendered collection of comments/_comment.html.erb [3 times] (Duration: 0.7ms | Allocations: 199)
+  Rendered comments/_new.html.erb (Duration: 0.9ms | Allocations: 329)
+  Rendered posts/show.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1620)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 52.1ms | Allocations: 5947)
+Completed 200 OK in 58ms (Views: 52.8ms | ActiveRecord: 0.7ms | Allocations: 6930)
+
+
+Started GET "/posts/1" for ::1 at 2021-10-27 14:36:59 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:62:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:21
+  Rendered collection of comments/_comment.html.erb [3 times] (Duration: 0.6ms | Allocations: 199)
+  Rendered comments/_new.html.erb (Duration: 0.8ms | Allocations: 329)
+  Rendered posts/show.html.erb within layouts/application (Duration: 6.7ms | Allocations: 1620)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 58.0ms | Allocations: 5947)
+Completed 200 OK in 62ms (Views: 58.7ms | ActiveRecord: 0.6ms | Allocations: 6930)
+
+
+Started POST "/posts/1/comments" for ::1 at 2021-10-27 14:37:02 +0300
+Processing by CommentsController#create as JS
+  Parameters: {"comment"=>{"body"=>"merhaba"}, "commit"=>"Create Comment", "post_id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:13:in `set_post'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+  [1m[36mComment Create (29.8ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 1], ["body", "merhaba"], ["created_at", "2021-10-27 11:37:02.882275"], ["updated_at", "2021-10-27 11:37:02.882275"]]
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (96.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 061a4302-ca00-45e8-9398-50ba3f97f04c) to Async(default) with arguments: "CommentsMailer", "submitted", "deliver_now", {:args=>[#<GlobalID:0x000000000cf31f68 @uri=#<URI::GID gid://tugce-blog/Comment/8>>]}
+  Rendered comments/_comment.html.erb (Duration: 0.3ms | Allocations: 48)
+[ActionCable] Broadcasting to comments:Z2lkOi8vdHVnY2UtYmxvZy9Qb3N0LzE: {:comment=>"<p>merhaba -- October 27, 2021 11:37</p>\n"}
+Redirected to http://localhost:3000/posts/1
+Completed 200 OK in 150ms (ActiveRecord: 126.9ms | Allocations: 4081)
+
+
+Started GET "/posts/1" for ::1 at 2021-10-27 14:37:03 +0300
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [061a4302-ca00-45e8-9398-50ba3f97f04c] Performing ActionMailer::MailDeliveryJob (Job ID: 061a4302-ca00-45e8-9398-50ba3f97f04c) from Async(default) enqueued at 2021-10-27T11:37:03Z with arguments: "CommentsMailer", "submitted", "deliver_now", {:args=>[#<GlobalID:0x000000000cfa3e10 @uri=#<URI::GID gid://tugce-blog/Comment/8>>]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [061a4302-ca00-45e8-9398-50ba3f97f04c]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [061a4302-ca00-45e8-9398-50ba3f97f04c]   Rendering comments_mailer/submitted.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [061a4302-ca00-45e8-9398-50ba3f97f04c]   [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [061a4302-ca00-45e8-9398-50ba3f97f04c]   ↳ app/views/comments_mailer/submitted.html.erb:1
+[ActiveJob] [ActionMailer::MailDeliveryJob] [061a4302-ca00-45e8-9398-50ba3f97f04c]   Rendered comments/_comment.html.erb (Duration: 0.2ms | Allocations: 57)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [061a4302-ca00-45e8-9398-50ba3f97f04c]   Rendered comments_mailer/submitted.html.erb within layouts/mailer (Duration: 6.9ms | Allocations: 777)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [061a4302-ca00-45e8-9398-50ba3f97f04c]   Rendered layout layouts/mailer.html.erb (Duration: 8.0ms | Allocations: 886)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [061a4302-ca00-45e8-9398-50ba3f97f04c]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [061a4302-ca00-45e8-9398-50ba3f97f04c]   Rendering comments_mailer/submitted.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [061a4302-ca00-45e8-9398-50ba3f97f04c]   Rendered comments_mailer/submitted.text.erb within layouts/mailer (Duration: 0.1ms | Allocations: 17)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [061a4302-ca00-45e8-9398-50ba3f97f04c]   Rendered layout layouts/mailer.text.erb (Duration: 2.1ms | Allocations: 126)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [061a4302-ca00-45e8-9398-50ba3f97f04c] CommentsMailer#submitted: processed outbound mail in 15.5ms
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:62:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:21
+  Rendered collection of comments/_comment.html.erb [4 times] (Duration: 0.6ms | Allocations: 243)
+  Rendered comments/_new.html.erb (Duration: 0.7ms | Allocations: 329)
+  Rendered posts/show.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1679)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 53.5ms | Allocations: 6006)
+Completed 200 OK in 59ms (Views: 55.0ms | ActiveRecord: 0.6ms | Allocations: 6989)
+
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [061a4302-ca00-45e8-9398-50ba3f97f04c] Delivered mail 617939df27773_567c4cdee5812937@DESKTOP-0SSH3KA.mail (4097.7ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [061a4302-ca00-45e8-9398-50ba3f97f04c] Date: Wed, 27 Oct 2021 14:37:03 +0300
+From: from@example.com
+To: blog-owner@example.org
+Message-ID: <617939df27773_567c4cdee5812937@DESKTOP-0SSH3KA.mail>
+Subject: Yeni Yorum!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_617939df26bd7_567c4cdee58128a0";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_617939df26bd7_567c4cdee58128a0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Yeni bir yorum var Albert Solino'ya Hos geldin Tugce!: merhaba 
+
+----==_mimepart_617939df26bd7_567c4cdee58128a0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Yeni bir yorum var Albert Solino&#39;ya Hos geldin Tugce!</h1>
+
+<p>merhaba -- October 27, 2021 11:37</p>
+
+  </body>
+</html>
+
+----==_mimepart_617939df26bd7_567c4cdee58128a0--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [061a4302-ca00-45e8-9398-50ba3f97f04c] Performed ActionMailer::MailDeliveryJob (Job ID: 061a4302-ca00-45e8-9398-50ba3f97f04c) from Async(default) in 4118.15ms
+Started POST "/posts/1/comments" for ::1 at 2021-10-27 14:37:10 +0300
+Processing by CommentsController#create as JS
+  Parameters: {"comment"=>{"body"=>"selam\n"}, "commit"=>"Create Comment", "post_id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:13:in `set_post'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+  [1m[36mComment Create (1.1ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 1], ["body", "selam\n"], ["created_at", "2021-10-27 11:37:10.166151"], ["updated_at", "2021-10-27 11:37:10.166151"]]
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (143.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: b7f5b393-cc44-45e0-8940-caaece5c54df) to Async(default) with arguments: "CommentsMailer", "submitted", "deliver_now", {:args=>[#<GlobalID:0x000000000d381758 @uri=#<URI::GID gid://tugce-blog/Comment/9>>]}
+  Rendered comments/_comment.html.erb (Duration: 0.3ms | Allocations: 48)
+[ActionCable] Broadcasting to comments:Z2lkOi8vdHVnY2UtYmxvZy9Qb3N0LzE: {:comment=>"<p>selam\n -- October 27, 2021 11:37</p>\n"}
+Redirected to http://localhost:3000/posts/1
+Completed 200 OK in 166ms (ActiveRecord: 144.5ms | Allocations: 4089)
+
+
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [b7f5b393-cc44-45e0-8940-caaece5c54df] Performing ActionMailer::MailDeliveryJob (Job ID: b7f5b393-cc44-45e0-8940-caaece5c54df) from Async(default) enqueued at 2021-10-27T11:37:10Z with arguments: "CommentsMailer", "submitted", "deliver_now", {:args=>[#<GlobalID:0x000000000d3b0620 @uri=#<URI::GID gid://tugce-blog/Comment/9>>]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [b7f5b393-cc44-45e0-8940-caaece5c54df]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [b7f5b393-cc44-45e0-8940-caaece5c54df]   Rendering comments_mailer/submitted.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [b7f5b393-cc44-45e0-8940-caaece5c54df]   [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [b7f5b393-cc44-45e0-8940-caaece5c54df]   ↳ app/views/comments_mailer/submitted.html.erb:1
+[ActiveJob] [ActionMailer::MailDeliveryJob] [b7f5b393-cc44-45e0-8940-caaece5c54df]   Rendered comments/_comment.html.erb (Duration: 0.2ms | Allocations: 57)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [b7f5b393-cc44-45e0-8940-caaece5c54df]   Rendered comments_mailer/submitted.html.erb within layouts/mailer (Duration: 11.6ms | Allocations: 1919)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [b7f5b393-cc44-45e0-8940-caaece5c54df]   Rendered layout layouts/mailer.html.erb (Duration: 16.1ms | Allocations: 2347)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [b7f5b393-cc44-45e0-8940-caaece5c54df]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [b7f5b393-cc44-45e0-8940-caaece5c54df]   Rendering comments_mailer/submitted.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [b7f5b393-cc44-45e0-8940-caaece5c54df]   Rendered comments_mailer/submitted.text.erb within layouts/mailer (Duration: 0.1ms | Allocations: 17)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [b7f5b393-cc44-45e0-8940-caaece5c54df]   Rendered layout layouts/mailer.text.erb (Duration: 8.2ms | Allocations: 375)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [b7f5b393-cc44-45e0-8940-caaece5c54df] CommentsMailer#submitted: processed outbound mail in 32.0ms
+Started GET "/posts/1" for ::1 at 2021-10-27 14:37:10 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:62:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:21
+  Rendered collection of comments/_comment.html.erb [5 times] (Duration: 0.8ms | Allocations: 287)
+  Rendered comments/_new.html.erb (Duration: 0.7ms | Allocations: 329)
+  Rendered posts/show.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1737)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 67.9ms | Allocations: 6065)
+Completed 200 OK in 73ms (Views: 68.8ms | ActiveRecord: 0.9ms | Allocations: 7048)
+
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [b7f5b393-cc44-45e0-8940-caaece5c54df] Delivered mail 617939e669358_567c4cdee58131b5@DESKTOP-0SSH3KA.mail (4077.1ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [b7f5b393-cc44-45e0-8940-caaece5c54df] Date: Wed, 27 Oct 2021 14:37:10 +0300
+From: from@example.com
+To: blog-owner@example.org
+Message-ID: <617939e669358_567c4cdee58131b5@DESKTOP-0SSH3KA.mail>
+Subject: Yeni Yorum!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_617939e6684b5_567c4cdee58130ab";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_617939e6684b5_567c4cdee58130ab
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Yeni bir yorum var Albert Solino'ya Hos geldin Tugce!: selam
+ 
+
+----==_mimepart_617939e6684b5_567c4cdee58130ab
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Yeni bir yorum var Albert Solino&#39;ya Hos geldin Tugce!</h1>
+
+<p>selam
+ -- October 27, 2021 11:37</p>
+
+  </body>
+</html>
+
+----==_mimepart_617939e6684b5_567c4cdee58130ab--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [b7f5b393-cc44-45e0-8940-caaece5c54df] Performed ActionMailer::MailDeliveryJob (Job ID: b7f5b393-cc44-45e0-8940-caaece5c54df) from Async(default) in 4113.57ms
+Started POST "/posts/1/comments" for ::1 at 2021-10-27 14:37:36 +0300
+Processing by CommentsController#create as JS
+  Parameters: {"comment"=>{"body"=>"Tuğçe"}, "commit"=>"Create Comment", "post_id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:13:in `set_post'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+  [1m[36mComment Create (1.2ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 1], ["body", "Tuğçe"], ["created_at", "2021-10-27 11:37:36.722672"], ["updated_at", "2021-10-27 11:37:36.722672"]]
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (111.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 6161ae0f-f50e-43b4-bc2e-cee2d843ce64) to Async(default) with arguments: "CommentsMailer", "submitted", "deliver_now", {:args=>[#<GlobalID:0x00000000094ca4b0 @uri=#<URI::GID gid://tugce-blog/Comment/10>>]}
+  Rendered comments/_comment.html.erb (Duration: 0.3ms | Allocations: 48)
+[ActionCable] Broadcasting to comments:Z2lkOi8vdHVnY2UtYmxvZy9Qb3N0LzE: {:comment=>"<p>Tuğçe -- October 27, 2021 11:37</p>\n"}
+Redirected to http://localhost:3000/posts/1
+Completed 200 OK in 136ms (ActiveRecord: 113.4ms | Allocations: 4090)
+
+
+Started GET "/posts/1" for ::1 at 2021-10-27 14:37:36 +0300
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [6161ae0f-f50e-43b4-bc2e-cee2d843ce64] Performing ActionMailer::MailDeliveryJob (Job ID: 6161ae0f-f50e-43b4-bc2e-cee2d843ce64) from Async(default) enqueued at 2021-10-27T11:37:36Z with arguments: "CommentsMailer", "submitted", "deliver_now", {:args=>[#<GlobalID:0x0000000009a3b610 @uri=#<URI::GID gid://tugce-blog/Comment/10>>]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [6161ae0f-f50e-43b4-bc2e-cee2d843ce64]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [6161ae0f-f50e-43b4-bc2e-cee2d843ce64]   Rendering comments_mailer/submitted.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [6161ae0f-f50e-43b4-bc2e-cee2d843ce64]   [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [6161ae0f-f50e-43b4-bc2e-cee2d843ce64]   ↳ app/views/comments_mailer/submitted.html.erb:1
+[ActiveJob] [ActionMailer::MailDeliveryJob] [6161ae0f-f50e-43b4-bc2e-cee2d843ce64]   Rendered comments/_comment.html.erb (Duration: 0.4ms | Allocations: 57)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [6161ae0f-f50e-43b4-bc2e-cee2d843ce64]   Rendered comments_mailer/submitted.html.erb within layouts/mailer (Duration: 5.3ms | Allocations: 777)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [6161ae0f-f50e-43b4-bc2e-cee2d843ce64]   Rendered layout layouts/mailer.html.erb (Duration: 6.4ms | Allocations: 886)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [6161ae0f-f50e-43b4-bc2e-cee2d843ce64]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [6161ae0f-f50e-43b4-bc2e-cee2d843ce64]   Rendering comments_mailer/submitted.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [6161ae0f-f50e-43b4-bc2e-cee2d843ce64]   Rendered comments_mailer/submitted.text.erb within layouts/mailer (Duration: 0.1ms | Allocations: 17)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [6161ae0f-f50e-43b4-bc2e-cee2d843ce64]   Rendered layout layouts/mailer.text.erb (Duration: 1.8ms | Allocations: 126)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [6161ae0f-f50e-43b4-bc2e-cee2d843ce64] CommentsMailer#submitted: processed outbound mail in 14.2ms
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:62:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:21
+  Rendered collection of comments/_comment.html.erb [6 times] (Duration: 0.9ms | Allocations: 331)
+  Rendered comments/_new.html.erb (Duration: 0.7ms | Allocations: 329)
+  Rendered posts/show.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1795)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 53.1ms | Allocations: 6122)
+Completed 200 OK in 59ms (Views: 54.6ms | ActiveRecord: 0.6ms | Allocations: 7105)
+
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [6161ae0f-f50e-43b4-bc2e-cee2d843ce64] Delivered mail 61793a00f3db6_567c4cdee58133d0@DESKTOP-0SSH3KA.mail (4085.3ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [6161ae0f-f50e-43b4-bc2e-cee2d843ce64] Date: Wed, 27 Oct 2021 14:37:36 +0300
+From: from@example.com
+To: blog-owner@example.org
+Message-ID: <61793a00f3db6_567c4cdee58133d0@DESKTOP-0SSH3KA.mail>
+Subject: Yeni Yorum!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_61793a00f2de3_567c4cdee5813237";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_61793a00f2de3_567c4cdee5813237
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Yeni bir yorum var Albert Solino'ya Hos geldin Tugce!: Tu=C4=9F=C3=A7e =0D=
+
+
+----==_mimepart_61793a00f2de3_567c4cdee5813237
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <h1>Yeni bir yorum var Albert Solino&#39;ya Hos geldin Tugce!</h1>=0D=
+
+=0D
+<p>Tu=C4=9F=C3=A7e -- October 27, 2021 11:37</p>=0D
+=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_61793a00f2de3_567c4cdee5813237--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [6161ae0f-f50e-43b4-bc2e-cee2d843ce64] Performed ActionMailer::MailDeliveryJob (Job ID: 6161ae0f-f50e-43b4-bc2e-cee2d843ce64) from Async(default) in 4103.48ms
+Started POST "/posts/1/comments" for ::1 at 2021-10-27 14:38:07 +0300
+Processing by CommentsController#create as JS
+  Parameters: {"comment"=>{"body"=>"olmadı"}, "commit"=>"Create Comment", "post_id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:13:in `set_post'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+  [1m[36mComment Create (1.3ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 1], ["body", "olmadı"], ["created_at", "2021-10-27 11:38:07.246732"], ["updated_at", "2021-10-27 11:38:07.246732"]]
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (123.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: a5763b2a-d1b3-4efb-b7b1-d0d33fe058ef) to Async(default) with arguments: "CommentsMailer", "submitted", "deliver_now", {:args=>[#<GlobalID:0x0000000009dcdff8 @uri=#<URI::GID gid://tugce-blog/Comment/11>>]}
+  Rendered comments/_comment.html.erb (Duration: 0.4ms | Allocations: 49)
+[ActionCable] Broadcasting to comments:Z2lkOi8vdHVnY2UtYmxvZy9Qb3N0LzE: {:comment=>"<p>olmadı -- October 27, 2021 11:38</p>\n"}
+Redirected to http://localhost:3000/posts/1
+Completed 200 OK in 148ms (ActiveRecord: 125.3ms | Allocations: 4496)
+
+
+Started GET "/posts/1" for ::1 at 2021-10-27 14:38:07 +0300
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a5763b2a-d1b3-4efb-b7b1-d0d33fe058ef] Performing ActionMailer::MailDeliveryJob (Job ID: a5763b2a-d1b3-4efb-b7b1-d0d33fe058ef) from Async(default) enqueued at 2021-10-27T11:38:07Z with arguments: "CommentsMailer", "submitted", "deliver_now", {:args=>[#<GlobalID:0x000000000ce55d38 @uri=#<URI::GID gid://tugce-blog/Comment/11>>]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a5763b2a-d1b3-4efb-b7b1-d0d33fe058ef]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a5763b2a-d1b3-4efb-b7b1-d0d33fe058ef]   Rendering comments_mailer/submitted.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a5763b2a-d1b3-4efb-b7b1-d0d33fe058ef]   [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a5763b2a-d1b3-4efb-b7b1-d0d33fe058ef]   ↳ app/views/comments_mailer/submitted.html.erb:1
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a5763b2a-d1b3-4efb-b7b1-d0d33fe058ef]   Rendered comments/_comment.html.erb (Duration: 0.3ms | Allocations: 57)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a5763b2a-d1b3-4efb-b7b1-d0d33fe058ef]   Rendered comments_mailer/submitted.html.erb within layouts/mailer (Duration: 5.6ms | Allocations: 777)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a5763b2a-d1b3-4efb-b7b1-d0d33fe058ef]   Rendered layout layouts/mailer.html.erb (Duration: 7.8ms | Allocations: 887)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a5763b2a-d1b3-4efb-b7b1-d0d33fe058ef]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a5763b2a-d1b3-4efb-b7b1-d0d33fe058ef]   Rendering comments_mailer/submitted.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a5763b2a-d1b3-4efb-b7b1-d0d33fe058ef]   Rendered comments_mailer/submitted.text.erb within layouts/mailer (Duration: 0.1ms | Allocations: 17)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a5763b2a-d1b3-4efb-b7b1-d0d33fe058ef]   Rendered layout layouts/mailer.text.erb (Duration: 2.6ms | Allocations: 126)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a5763b2a-d1b3-4efb-b7b1-d0d33fe058ef] CommentsMailer#submitted: processed outbound mail in 17.3ms
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:62:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:21
+  Rendered collection of comments/_comment.html.erb [7 times] (Duration: 1.0ms | Allocations: 375)
+  Rendered comments/_new.html.erb (Duration: 0.7ms | Allocations: 329)
+  Rendered posts/show.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1853)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 61.1ms | Allocations: 6180)
+Completed 200 OK in 66ms (Views: 61.7ms | ActiveRecord: 0.7ms | Allocations: 7163)
+
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a5763b2a-d1b3-4efb-b7b1-d0d33fe058ef] Delivered mail 61793a1f7fd84_567c4cdee58135cc@DESKTOP-0SSH3KA.mail (4100.1ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a5763b2a-d1b3-4efb-b7b1-d0d33fe058ef] Date: Wed, 27 Oct 2021 14:38:07 +0300
+From: from@example.com
+To: blog-owner@example.org
+Message-ID: <61793a1f7fd84_567c4cdee58135cc@DESKTOP-0SSH3KA.mail>
+Subject: Yeni Yorum!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_61793a1f7f39c_567c4cdee58134ed";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_61793a1f7f39c_567c4cdee58134ed
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Yeni bir yorum var Albert Solino'ya Hos geldin Tugce!: olmad=C4=B1 =0D
+
+----==_mimepart_61793a1f7f39c_567c4cdee58134ed
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <h1>Yeni bir yorum var Albert Solino&#39;ya Hos geldin Tugce!</h1>=0D=
+
+=0D
+<p>olmad=C4=B1 -- October 27, 2021 11:38</p>=0D
+=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_61793a1f7f39c_567c4cdee58134ed--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a5763b2a-d1b3-4efb-b7b1-d0d33fe058ef] Performed ActionMailer::MailDeliveryJob (Job ID: a5763b2a-d1b3-4efb-b7b1-d0d33fe058ef) from Async(default) in 4121.07ms
+Finished "/cable/" [WebSocket] for ::1 at 2021-10-27 14:38:24 +0300
+CommentsChannel stopped streaming from comments:Z2lkOi8vdHVnY2UtYmxvZy9Qb3N0LzI
